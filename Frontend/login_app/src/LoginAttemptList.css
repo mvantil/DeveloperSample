@@ -1,0 +1,8 @@
+.Attempt-List-Main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 25vw;
+  padding: 0 2em;
+}
