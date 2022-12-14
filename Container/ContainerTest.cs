@@ -12,7 +12,7 @@ namespace DeveloperSample.Container
 
     public class ContainerTest
     {
-        [Fact(Skip="Not implemented")]
+        [Fact]
         public void CanBindAndGetService()
         {
             var container = new Container();

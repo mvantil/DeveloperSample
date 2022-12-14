@@ -4,16 +4,24 @@ namespace DeveloperSample.Algorithms
 {
     public class AlgorithmTest
     {
-        [Fact(Skip="Not implemented")]
-        public void CanGetFactorial()
+        [Theory]
+        [InlineData(4, 24)]
+        [InlineData(3, 6)]
+        [InlineData(5, 120)]
+        [InlineData(1, 1)]
+        public void CanGetFactorial(int factorialOf, int factorial)
         {
-            Assert.Equal(24, Algorithms.GetFactorial(4));
+            Assert.Equal(factorial, Algorithms.GetFactorial(factorialOf));
         }
 
-        [Fact(Skip="Not implemented")]
-        public void CanFormatSeparators()
+        [Theory]
+        [InlineData("a, b and c", "a", "b", "c")]
+        [InlineData("a and c", "a", "c")]
+        [InlineData("a", "a")]
+        [InlineData("a, b, d, e, f, g and c", "a", "b", "d", "e", "f", "g", "c")]
+        public void CanFormatSeparators(string sentence, params string[] words)
         {
-            Assert.Equal("a, b and c", Algorithms.FormatSeparators("a", "b", "c"));
+            Assert.Equal(sentence, Algorithms.FormatSeparators(words));
         }
     }
 }
